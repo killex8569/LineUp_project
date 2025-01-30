@@ -7,4 +7,5 @@ from customtkinter import *
 lineup = CTk()
 lineup.geometry("600x500")
 
+# test
 lineup.mainloop()
