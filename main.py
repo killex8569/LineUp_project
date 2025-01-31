@@ -50,7 +50,5 @@ content_frame4.grid(row=3, column=0, sticky="nswe")
 content_frame4.grid_columnconfigure(1, weight=1)
 content_frame4.grid_rowconfigure(2, weight=1)
 
-# Menu latéral
-
 
 lineup.mainloop()
