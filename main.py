@@ -26,9 +26,11 @@ content_frame.grid_columnconfigure(1, weight=1)
 content_frame.grid_rowconfigure(0, weight=1)
 
 # Contenue de la frame logo
-logo_png = customtkinter.CTkImage(light_image=Image.open("data/LineUp.png"))
+content_frame.grid_columnconfigure(0, weight=1)
+content_frame.grid_rowconfigure(0, weight=1)
+logo_png = customtkinter.CTkImage(Image.open("data/LineUp.png"), size=(100, 100))
 logo = customtkinter.CTkLabel(master=content_frame, image=logo_png)
-logo.grid()
+logo.grid(row=0, column=0)
 
 
 # Création de la frame 2 (action)
