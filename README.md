@@ -21,7 +21,7 @@ LineUp propose les fonctionnalités suivantes :
 ## Installation
 `pip install customtkinter`
 
-**Fait par Killex**
+**Fait par Killex et ValentinRyckaert**
 
 # EN
 ## Introduction
@@ -44,4 +44,4 @@ LineUp offers the following features:
 ## Installation
 `pip install customtkinter`
 
-**Created by Killex**
+**Created by Killex and ValentinRyckaert**
