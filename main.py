@@ -29,7 +29,7 @@ content_frame.grid_rowconfigure(0, weight=1)
 content_frame.grid_columnconfigure(0, weight=1)
 content_frame.grid_rowconfigure(0, weight=1)
 logo_png = customtkinter.CTkImage(Image.open("data/LineUp.png"), size=(100, 100))
-logo = customtkinter.CTkLabel(master=content_frame, image=logo_png)
+logo = customtkinter.CTkLabel(master=content_frame, image=logo_png, text="")
 logo.grid(row=0, column=0)
 
 
