@@ -5,4 +5,5 @@ packaging==24.2
 pillow==11.1.0
 pyinstaller==6.11.1
 pyinstaller-hooks-contrib==2025.0
+pytube==15.0.0
 setuptools==75.8.0
