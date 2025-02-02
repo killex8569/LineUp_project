@@ -15,9 +15,10 @@ customtkinter.deactivate_automatic_dpi_awareness()
 
 # ajout de l'interface
 lineup = CTk()
-lineup.geometry("600x500")
+lineup.geometry("700x600")
 lineup.title("LineUp")
 lineup.iconbitmap("data/LineUp.ico")
+lineup.resizable(False, False)
 
 
 # Création de la frame (logo)
@@ -45,11 +46,11 @@ content_frame2.grid_rowconfigure(1, weight=1)
 
 # bouton frame 2
 btn_playlist = customtkinter.CTkButton(master=content_frame2, text="Playlist")
-btn_playlist.grid(row=1, column=1)
+btn_playlist.grid(row=1, column=1, pady=10)
 btn_youtube = customtkinter.CTkButton(master=content_frame2, text="Youtube")
-btn_youtube.grid(row=2, column=1, pady=20)
+btn_youtube.grid(row=2, column=1, pady=10)
 btn_account = customtkinter.CTkButton(master=content_frame2, text="Compte")
-btn_account.grid(row=3, column=1)
+btn_account.grid(row=3, column=1, pady=10)
 
 # Création de la frame 3 (account)
 content_frame3 = customtkinter.CTkFrame(master=lineup, fg_color="#1E90FF", corner_radius=0)
