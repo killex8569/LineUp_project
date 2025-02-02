@@ -32,12 +32,23 @@ logo_png = customtkinter.CTkImage(Image.open("data/LineUp.png"), size=(100, 100)
 logo = customtkinter.CTkLabel(master=content_frame, image=logo_png, text="")
 logo.grid(row=0, column=0)
 
+# Ajout du label sous le logo
+logo_label = customtkinter.CTkLabel(master=content_frame, text="LineUp", font=("Arial", 14), text_color="white")
+logo_label.grid(row=1, column=0, pady=(5, 10))
 
 # Création de la frame 2 (action)
 content_frame2 = customtkinter.CTkFrame(master=lineup, fg_color="#1E90FF", corner_radius=0)
 content_frame2.grid(row=1, column=0, sticky="nswe")
 content_frame2.grid_columnconfigure(1, weight=1)
 content_frame2.grid_rowconfigure(1, weight=1)
+
+# bouton frame 2
+btn_playlist = customtkinter.CTkButton(master=content_frame2, text="Playlist")
+btn_playlist.grid(row=1, column=1)
+btn_youtube = customtkinter.CTkButton(master=content_frame2, text="Youtube")
+btn_youtube.grid(row=2, column=1, pady=20)
+btn_account = customtkinter.CTkButton(master=content_frame2, text="Compte")
+btn_account.grid(row=3, column=1)
 
 # Création de la frame 3 (account)
 content_frame3 = customtkinter.CTkFrame(master=lineup, fg_color="#1E90FF", corner_radius=0)
