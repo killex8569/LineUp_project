@@ -7,6 +7,7 @@ from PIL import Image
 from PyInstaller import *
 from tkinter import font
 import tkinter.font as tkFont
+from pytube import *
 
 # set the default appearance and font
 customtkinter.set_appearance_mode("dark")
@@ -48,12 +49,14 @@ content_frame2.grid_rowconfigure(1, weight=1)
 # bouton frame 2
 btn_youtube = customtkinter.CTkButton(master=content_frame2, text="Youtube", width=150, height=50, text_color="white", font=lineup_font, fg_color="transparent")
 btn_youtube.grid(row=1, column=1, pady=25, padx=40)
+btn_url_download = customtkinter.CTkButton(master=content_frame2, text="URL download", width=150, height=50, text_color="white", font=lineup_font, fg_color="transparent")
+btn_url_download.grid(row=2, column=1, pady=25, padx=40)
 btn_playlist = customtkinter.CTkButton(master=content_frame2, text="Playlist", width=150, height=50, text_color="white", font=lineup_font, fg_color="transparent")
-btn_playlist.grid(row=2, column=1, pady=25, padx=40)
+btn_playlist.grid(row=3, column=1, pady=25, padx=40)
 btn_account = customtkinter.CTkButton(master=content_frame2, text="Compte", width=150, height=50, text_color="white", font=lineup_font, fg_color="transparent")
-btn_account.grid(row=3, column=1, pady=25, padx=40)
+btn_account.grid(row=4, column=1, pady=25, padx=40)
 btn_setting = customtkinter.CTkButton(master=content_frame2, text="Setting", width=150, height=50, text_color="white", font=lineup_font, fg_color="transparent")
-btn_setting.grid(row=4, column=1, pady=25, padx=40)
+btn_setting.grid(row=5, column=1, pady=25, padx=40)
 
 
 # navbar
