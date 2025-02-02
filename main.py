@@ -19,6 +19,7 @@ lineup.geometry("600x500")
 lineup.title("LineUp")
 lineup.iconbitmap("data/LineUp.ico")
 
+
 # Création de la frame (logo)
 content_frame = customtkinter.CTkFrame(master=lineup, fg_color="#1E90FF", corner_radius=0)
 content_frame.grid(row=0, column=0, sticky="nswe")
@@ -62,6 +63,18 @@ content_frame4 = customtkinter.CTkFrame(master=lineup, fg_color="#1E90FF", corne
 content_frame4.grid(row=3, column=0, sticky="nswe")
 content_frame4.grid_columnconfigure(1, weight=1)
 content_frame4.grid_rowconfigure(2, weight=1)
+
+# navbar
+navbar = customtkinter.CTkFrame(master=lineup, fg_color="gray", corner_radius=0)
+navbar.grid(row=0, column=1, sticky="nswe", padx=0, pady=0)
+
+# Contenue principal (NAVBAR FRAME)
+navbar_entry_youtube = customtkinter.CTkEntry(master=navbar, placeholder_text="Recherche sur Youtube")
+navbar_entry_youtube.grid(padx=5)
+
+
+
+# button navbar frame
 
 
 lineup.mainloop()
