@@ -21,6 +21,10 @@ LineUp propose les fonctionnalités suivantes :
 ## Installation
 Pour pouvoir utiliser le logiciel, si vous utilisez la version Python, vous devrez d'abord installer les bibliothèques nécessaires (si ce n'est pas déjà fait) à l'aide de la commande suivante :  `pip install -r requirements.txt`. Une fois cela fait, vous pouvez commencer à utiliser l'application. Pour la version .exe (qui sera probablement disponible dans de futures mises à jour), l'installation des bibliothèques ne sera pas nécessaire.
 
+
+### API Youtube et Discord
+Pour que LineUp fonctionne de manière optimale et simplifiée, nous utilisons les API de YouTube et de Discord afin de communiquer avec ces services. L'API YouTube permet d'effectuer des recherches directement depuis LineUp vers YouTube, tandis que l'API Discord permet à vos amis de savoir quelle musique vous écoutez, offrant ainsi une fonctionnalité similaire à celle de Spotify.
+
 **Fait par Killex et ValentinRyckaert**
 
 
@@ -44,5 +48,8 @@ LineUp offers the following features:
 
 ## Installation
 To use the software, if you are using the Python version, you first need to install the required libraries (if you haven’t already) using the following command : `pip install -r requirements.txt`. Once this is done, you can start using the application. For the .exe version (which will likely be available in future updates), no library installation will be required
+
+### YouTube and Discord API
+To ensure LineUp operates efficiently and seamlessly, we use the YouTube and Discord APIs to interact with these services. The YouTube API allows LineUp to perform searches directly on YouTube, while the Discord API enables your friends to see what music you're listening to, providing a feature similar to Spotify.
 
 **Created by Killex and ValentinRyckaert**
