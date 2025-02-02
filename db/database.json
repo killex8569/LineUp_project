@@ -1,11 +1,10 @@
 {
-    "users":[
+    "users": [
         {
-            "id":0,
-            "username":"gest",
-            "passhash":null
+            "id": 0,
+            "username": "gest",
+            "passhash": null
         }
     ],
-    
-    "playlists":[]
+    "playlists": []
 }
