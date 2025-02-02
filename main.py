@@ -31,7 +31,7 @@ content_frame.grid_rowconfigure(0, weight=1)
 content_frame.grid_columnconfigure(0, weight=1)
 content_frame.grid_rowconfigure(0, weight=1)
 logo_png = customtkinter.CTkImage(Image.open("data/LineUp.png"), size=(100, 100))
-logo = customtkinter.CTkLabel(master=content_frame, image=logo_png, text="")
+logo = customtkinter.CTkLabel(master=content_frame, image=logo_png, text="", padx=40)
 logo.grid(row=0, column=0)
 
 # Ajout du label sous le logo
@@ -46,28 +46,17 @@ content_frame2.grid_rowconfigure(1, weight=1)
 
 # bouton frame 2
 btn_playlist = customtkinter.CTkButton(master=content_frame2, text="Playlist")
-btn_playlist.grid(row=1, column=1, pady=10)
+btn_playlist.grid(row=1, column=1, pady=10, padx=40)
 btn_youtube = customtkinter.CTkButton(master=content_frame2, text="Youtube")
-btn_youtube.grid(row=2, column=1, pady=10)
+btn_youtube.grid(row=2, column=1, pady=10, padx=40)
 btn_account = customtkinter.CTkButton(master=content_frame2, text="Compte")
-btn_account.grid(row=3, column=1, pady=10)
+btn_account.grid(row=3, column=1, pady=10, padx=40)
 
-# Création de la frame 3 (account)
-content_frame3 = customtkinter.CTkFrame(master=lineup, fg_color="#1E90FF", corner_radius=0)
-content_frame3.grid(row=2, column=0, sticky="nswe")
-content_frame3.grid_columnconfigure(1, weight=1)
-content_frame3.grid_rowconfigure(2, weight=1)
-
-
-# Création de la frame 4 (end)
-content_frame4 = customtkinter.CTkFrame(master=lineup, fg_color="#1E90FF", corner_radius=0)
-content_frame4.grid(row=3, column=0, sticky="nswe")
-content_frame4.grid_columnconfigure(1, weight=1)
-content_frame4.grid_rowconfigure(2, weight=1)
 
 # navbar
-navbar = customtkinter.CTkFrame(master=lineup, fg_color="gray", corner_radius=0)
-navbar.grid(row=0, column=1, sticky="nswe", padx=0, pady=0)
+navbar = customtkinter.CTkFrame(master=lineup, corner_radius=0)
+navbar.grid(row=0, column=1, rowspan=5, columnspan=5, sticky="nswe", padx=0, pady=0)
+
 
 # Contenue principal (NAVBAR FRAME)
 navbar_entry_youtube = customtkinter.CTkEntry(master=navbar, placeholder_text="Recherche sur Youtube")
