@@ -50,3 +50,4 @@ class DAOUser:
         with open(self.dbPath, 'w') as db:
             db.seek(0)
             json.dump(data, db, ensure_ascii=False, indent=4)
+        return True
