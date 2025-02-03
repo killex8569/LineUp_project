@@ -1,5 +1,3 @@
-# fait par deux étudiant Français
-# Make by Killex8569 and ValentinRyckaert
 import os
 import tkinter
 import customtkinter
@@ -23,22 +21,44 @@ def youtube_recherche():
     url_ytb = navbar_entry_youtube.get()
     print("votre recherche est : ", url_ytb)
 
-def setting():
+def settings():
     print("Bienvenue dans les settings")
+    # masque les frames :
+    navbar_frame.grid_forget()
+    account_frame.grid_forget()
 
+    # afficher les frames :
+    setting_lineup.grid(row=0, column=1, rowspan=5, columnspan=5, sticky="nswe")
+
+def account():
+    print("Bienvenue dans le compte")
+    # masquer les frames : 
+    navbar_frame.grid_forget()
+    setting_lineup.grid_forget()
+
+    # afficher les frames :
+    account_frame.grid(row=0, column=1, rowspan=5, columnspan=5, sticky="nswe")
+
+def youtube():
+    print("Bienvenue dans youtube")
+    # masquer les frames
+    navbar_frame.grid_forget()
+    setting_lineup.grid_forget()
+
+    # afficher les frames
+    navbar_frame.grid(row=0, column=1, rowspan=5, columnspan=5, sticky="nswe")
 
 # Add interface
 lineup = CTk()
 lineup.geometry("700x600")
 lineup.title("LineUp")
 lineup.iconbitmap("data/LineUp.ico")
-lineup.resizable(False, False)
+# lineup.resizable(False, False)
 
 # Add font
 font_path = "/data/Kanit/Kanit-Regular.ttf"
 lineup_font = customtkinter.CTkFont(family="Kanit", size=16)
 lineup.option_add("*font", lineup_font)
-
 
 # Create frame (logo)
 content_frame = customtkinter.CTkFrame(master=lineup, fg_color="#1E90FF", corner_radius=0)
@@ -66,36 +86,38 @@ playlist_png = customtkinter.CTkImage(Image.open("data/playlist.png"), size=(20,
 download_png = customtkinter.CTkImage(Image.open("data/download-circular-button.png"), size=(20, 20))
 youtube_png = customtkinter.CTkImage(Image.open("data/youtube.png"), size=(20, 20))
 
-
 # bouton frame 2
-btn_youtube = customtkinter.CTkButton(master=content_frame2, text="Youtube", width=150, height=50, text_color="white", font=lineup_font, fg_color="transparent", image=youtube_png)
+btn_youtube = customtkinter.CTkButton(master=content_frame2, text="Youtube", width=150, height=50, text_color="white", font=lineup_font, fg_color="transparent", image=youtube_png, command=youtube)
 btn_youtube.grid(row=1, column=1, pady=25, padx=40)
 btn_url_download = customtkinter.CTkButton(master=content_frame2, text="URL download", width=150, height=50, text_color="white", font=lineup_font, fg_color="transparent", image=download_png)
 btn_url_download.grid(row=2, column=1, pady=25, padx=40)
 btn_playlist = customtkinter.CTkButton(master=content_frame2, text="Playlist", width=150, height=50, text_color="white", font=lineup_font, fg_color="transparent", image=playlist_png)
 btn_playlist.grid(row=3, column=1, pady=25, padx=40)
-btn_account = customtkinter.CTkButton(master=content_frame2, text="Compte", width=150, height=50, text_color="white", font=lineup_font, fg_color="transparent", image=account_png)
+btn_account = customtkinter.CTkButton(master=content_frame2, text="Compte", width=150, height=50, text_color="white", font=lineup_font, fg_color="transparent", image=account_png, command=account)
 btn_account.grid(row=5, column=1, pady=25, padx=40)
-btn_setting = customtkinter.CTkButton(master=content_frame2, text="Setting", width=150, height=50, text_color="white", font=lineup_font, fg_color="transparent", image=setting_png, command=setting)
+btn_setting = customtkinter.CTkButton(master=content_frame2, text="Setting", width=150, height=50, text_color="white", font=lineup_font, fg_color="transparent", image=setting_png, command=settings)
 btn_setting.grid(row=4, column=1, pady=25, padx=40)
 
-
 # navbar
-navbar = customtkinter.CTkFrame(master=lineup, corner_radius=0)
-navbar.grid(row=0, column=1, rowspan=5, columnspan=5, sticky="nswe", padx=0, pady=0)
+navbar_frame = customtkinter.CTkFrame(master=lineup, corner_radius=0)
+navbar_frame.grid(row=0, column=1, rowspan=5, columnspan=5, sticky="nswe", padx=0, pady=0)
 
-
-# Contenue principal (NAVBAR FRAME)
-navbar_entry_youtube = customtkinter.CTkEntry(master=navbar, placeholder_text="Recherche sur Youtube")
+# Contenu principal (NAVBAR FRAME)
+navbar_entry_youtube = customtkinter.CTkEntry(master=navbar_frame, placeholder_text="Recherche sur Youtube")
 navbar_entry_youtube.grid(row=1, column=1, padx=5)
 
-navbar_btn = customtkinter.CTkButton(master=navbar, text="recherche", command=youtube_recherche)
+# button navbar frame
+navbar_btn = customtkinter.CTkButton(master=navbar_frame, text="recherche", command=youtube_recherche)
 navbar_btn.grid(row= 1, column=2, padx=5, pady=5)
 
+# setting frame
 setting_lineup = customtkinter.CTkFrame(master=lineup)
-setting_lineup.grid()
 
-# button navbar frame
+# account frame
+account_frame = customtkinter.CTkFrame(master=lineup)
 
+# Initialisation : Masquer les frames autres que la navbar au départ
+setting_lineup.grid_forget()
+account_frame.grid_forget()
 
 lineup.mainloop()
