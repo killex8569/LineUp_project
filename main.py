@@ -149,9 +149,10 @@ navbar_frame.grid(row=0, column=1, rowspan=5, columnspan=5, sticky="nswe", padx=
 navbar_entry_youtube = customtkinter.CTkEntry(master=navbar_frame, placeholder_text="Recherche sur Youtube")
 navbar_entry_youtube.grid(row=1, column=1, padx=5)
 
-# button navbar frame
 navbar_btn = customtkinter.CTkButton(master=navbar_frame, text="recherche", command=youtube_recherche)
 navbar_btn.grid(row= 1, column=2, padx=5, pady=5)
+
+
 
 # setting frame
 setting_lineup = customtkinter.CTkFrame(master=lineup)
@@ -160,11 +161,15 @@ setting_lineup.grid(row=0, column=1, rowspan=5, columnspan=5, sticky="nswe", pad
 # Button setting frame
 
 
+
+
 # Download frame
 download_frame = customtkinter.CTkFrame(master=lineup)
 download_frame.grid(row=0, column=1, rowspan=5, columnspan=5, sticky="nswe", padx=0, pady=0)
 
 # Button Download frame
+
+
 
 # account frame
 account_frame = customtkinter.CTkFrame(master=lineup)
@@ -188,6 +193,24 @@ account_btn_modify_credential.grid(row=7, column=3, sticky="nswe", padx=8, pady=
 playlist_frame = customtkinter.CTkLabel(master=lineup, text="")
 playlist_frame.grid(row=0, column=1, rowspan=5, columnspan=5, sticky="nswe", padx=0, pady=0)
 
+# button playlist frame
+
+
+
+# login frame
+login_frame = customtkinter.CTkFrame(master=lineup)
+login_frame.grid(row=1, column=3, sticky="nswe", padx=10, pady=10)
+
+# Login Button
+login_entry = customtkinter.CTkEntry(master=login_frame, placeholder_text="votre login")
+login_entry.grid(row=0, column=0, padx=10, pady=10)
+
+passwd_entry = customtkinter.CTkEntry(master=login_frame, placeholder_text="votre mot de passe", show="*")
+passwd_entry.grid(row=1, column=0, padx=10, pady=10)
+
+login_btn = customtkinter.CTkButton(master=login_frame, text="connexion", command=login)
+login_btn.grid(row=2, column=0, padx=10, pady=10)
+
 
 # Initialisation : Masquer les frames autres que la navbar au départ
 setting_lineup.grid_forget()
@@ -197,23 +220,6 @@ download_frame.grid_forget()
 navbar_frame.grid_forget()
 content_frame.grid_forget()
 content_frame2.grid_forget()
-
-
-# login frame
-
-login_frame = customtkinter.CTkFrame(master=lineup)
-login_frame.grid(row=1, column=3, sticky="nswe", padx=10, pady=10)
-
-# Login Button
-
-login_entry = customtkinter.CTkEntry(master=login_frame, placeholder_text="votre login")
-login_entry.grid(row=0, column=0, padx=10, pady=10)
-
-passwd_entry = customtkinter.CTkEntry(master=login_frame, placeholder_text="votre mot de passe", show="*")
-passwd_entry.grid(row=1, column=0, padx=10, pady=10)
-
-login_btn = customtkinter.CTkButton(master=login_frame, text="connexion", command=login)
-login_btn.grid(row=2, column=0, padx=10, pady=10)
 
 # Lancement de la boucle
 lineup.mainloop()
