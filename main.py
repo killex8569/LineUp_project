@@ -26,15 +26,19 @@ def settings():
     # masque les frames :
     navbar_frame.grid_forget()
     account_frame.grid_forget()
+    download_frame.grid_forget()
+    playlist_frame.grid_forget()
 
     # afficher les frames :
     setting_lineup.grid(row=0, column=1, rowspan=5, columnspan=5, sticky="nswe")
 
 def account():
     print("Bienvenue dans le compte")
-    # masquer les frames : 
+    # masquer les frames :
     navbar_frame.grid_forget()
     setting_lineup.grid_forget()
+    download_frame.grid_forget()
+    playlist_frame.grid_forget()
 
     # afficher les frames :
     account_frame.grid(row=0, column=1, rowspan=5, columnspan=5, sticky="nswe")
@@ -44,16 +48,39 @@ def youtube():
     # masquer les frames
     account_frame.grid_forget()
     setting_lineup.grid_forget()
+    download_frame.grid_forget()
+    playlist_frame.grid_forget()
 
     # afficher les frames
     navbar_frame.grid(row=0, column=1, rowspan=5, columnspan=5, sticky="nswe")
+
+def playlist():
+    print("Bienvenue dans vos playlist")
+    account_frame.grid_forget()
+    setting_lineup.grid_forget()
+    download_frame.grid_forget()
+    navbar_frame.grid_forget()
+    
+    playlist_frame.grid(row=0, column=1, rowspan=5, columnspan=5, sticky="nswe")
+
+def download():
+    print("Bienvenue dans vos téléchargement")
+    account_frame.grid_forget()
+    setting_lineup.grid_forget()
+    navbar_frame.grid_forget()
+    playlist_frame.grid_forget()
+    
+    download_frame.grid(row=0, column=1, rowspan=5, columnspan=5, sticky="nswe")
+        
+def new_credentials():
+    print("Bienvenue dans le gestionnaire de changement de mot de passe ! ")
 
 # Add interface
 lineup = CTk()
 lineup.geometry("700x600")
 lineup.title("LineUp")
 lineup.iconbitmap("data/LineUp.ico")
-# lineup.resizable(False, False)
+lineup.resizable(False, False)
 
 # Add font
 font_path = "/data/Kanit/Kanit-Regular.ttf"
@@ -89,11 +116,11 @@ youtube_png = customtkinter.CTkImage(Image.open("data/youtube.png"), size=(20, 2
 # bouton frame 2
 btn_youtube = customtkinter.CTkButton(master=content_frame2, text="Youtube", width=150, height=50, text_color="white", font=lineup_font, fg_color="transparent", image=youtube_png, command=youtube)
 btn_youtube.grid(row=1, column=1, pady=25, padx=40)
-btn_url_download = customtkinter.CTkButton(master=content_frame2, text="URL download", width=150, height=50, text_color="white", font=lineup_font, fg_color="transparent", image=download_png)
+btn_url_download = customtkinter.CTkButton(master=content_frame2, text="Download", width=150, height=50, text_color="white", font=lineup_font, fg_color="transparent", image=download_png, command=download)
 btn_url_download.grid(row=2, column=1, pady=25, padx=40)
-btn_playlist = customtkinter.CTkButton(master=content_frame2, text="Playlist", width=150, height=50, text_color="white", font=lineup_font, fg_color="transparent", image=playlist_png)
+btn_playlist = customtkinter.CTkButton(master=content_frame2, text="Playlist", width=150, height=50, text_color="white", font=lineup_font, fg_color="transparent", image=playlist_png, command=playlist)
 btn_playlist.grid(row=3, column=1, pady=25, padx=40)
-btn_account = customtkinter.CTkButton(master=content_frame2, text="Compte", width=150, height=50, text_color="white", font=lineup_font, fg_color="transparent", image=account_png, command=account)
+btn_account = customtkinter.CTkButton(master=content_frame2, text="Account", width=150, height=50, text_color="white", font=lineup_font, fg_color="transparent", image=account_png, command=account)
 btn_account.grid(row=5, column=1, pady=25, padx=40)
 btn_setting = customtkinter.CTkButton(master=content_frame2, text="Setting", width=150, height=50, text_color="white", font=lineup_font, fg_color="transparent", image=setting_png, command=settings)
 btn_setting.grid(row=4, column=1, pady=25, padx=40)
@@ -114,12 +141,43 @@ navbar_btn.grid(row= 1, column=2, padx=5, pady=5)
 setting_lineup = customtkinter.CTkFrame(master=lineup)
 setting_lineup.grid(row=0, column=1, rowspan=5, columnspan=5, sticky="nswe", padx=0, pady=0)
 
+# Button setting frame
+
+
+# Download frame
+download_frame = customtkinter.CTkFrame(master=lineup)
+download_frame.grid(row=0, column=1, rowspan=5, columnspan=5, sticky="nswe", padx=0, pady=0)
+
+# Button Download frame
+
 # account frame
 account_frame = customtkinter.CTkFrame(master=lineup)
 account_frame.grid(row=0, column=1, rowspan=5, columnspan=5, sticky="nswe", padx=0, pady=0)
 
+# Action account frame
+account_label = customtkinter.CTkLabel(master=account_frame, text="Credentials", font=("Arial", 16))
+account_label.grid(row=6, column=1, sticky="nswe", padx=10, pady=10)
+
+account_entry_modify_login = customtkinter.CTkEntry(master=account_frame, placeholder_text="actual password")
+account_entry_modify_login.grid(row=7, column=1, sticky="nswe", padx=8, pady=8)
+
+account_entry_modify_password = customtkinter.CTkEntry(master=account_frame, placeholder_text="New password")
+account_entry_modify_password.grid(row=7, column=2, sticky="nswe", padx=8, pady=8)
+
+account_btn_modify_credential = customtkinter.CTkButton(master=account_frame, corner_radius=5, text="change Credentials", command=new_credentials)
+account_btn_modify_credential.grid(row=7, column=3, sticky="nswe", padx=8, pady=8)
+
+
+# Playlist frame
+playlist_frame = customtkinter.CTkLabel(master=lineup, text="")
+playlist_frame.grid(row=0, column=1, rowspan=5, columnspan=5, sticky="nswe", padx=0, pady=0)
+
+
 # Initialisation : Masquer les frames autres que la navbar au départ
 setting_lineup.grid_forget()
 account_frame.grid_forget()
+playlist_frame.grid_forget()
 
+
+# Lancement de la boucle
 lineup.mainloop()
