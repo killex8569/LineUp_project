@@ -1,3 +1,5 @@
+# fait par deux étudiant Français
+# Make by Killex8569 and ValentinRyckaert
 import os
 import tkinter
 import customtkinter
@@ -13,43 +15,42 @@ from pytube import *
 customtkinter.set_appearance_mode("dark")
 customtkinter.set_default_color_theme("blue")
 
-# deactivate automatic scaling
+# Deactivate automatic scaling
 customtkinter.deactivate_automatic_dpi_awareness()
 
-# Fonction pour rechercher
+# Research function
 def youtube_recherche():
-    recherche = navbar_entry_youtube.get()
-    print("votre recherche est : ", recherche)
+    url_ytb = navbar_entry_youtube.get()
+    print("votre recherche est : ", url_ytb)
     
 
-
-# ajout de l'interface
+# Add interface
 lineup = CTk()
 lineup.geometry("700x600")
 lineup.title("LineUp")
 lineup.iconbitmap("data/LineUp.ico")
 lineup.resizable(False, False)
 
-# font
+# Add font
 font_path = "/data/Kanit/Kanit-Regular.ttf"
 lineup_font = customtkinter.CTkFont(family="Kanit", size=16)
 lineup.option_add("*font", lineup_font)
 
 
-# Création de la frame (logo)
+# Create frame (logo)
 content_frame = customtkinter.CTkFrame(master=lineup, fg_color="#1E90FF", corner_radius=0)
 content_frame.grid(row=0, column=0, sticky="nswe")
 content_frame.grid_columnconfigure(1, weight=1)
 content_frame.grid_rowconfigure(0, weight=1)
 
-# Contenue de la frame logo
+# Content frame logo
 content_frame.grid_columnconfigure(0, weight=1)
 content_frame.grid_rowconfigure(0, weight=1)
 logo_png = customtkinter.CTkImage(Image.open("data/LineUp.png"), size=(100, 100))
 logo = customtkinter.CTkLabel(master=content_frame, image=logo_png, text="", padx=40)
 logo.grid(row=0, column=0)
 
-# Création de la frame 2 (action)
+# Create frame 2 (action)
 content_frame2 = customtkinter.CTkFrame(master=lineup, fg_color="#1E90FF", corner_radius=0)
 content_frame2.grid(row=1, column=0, sticky="nswe")
 content_frame2.grid_columnconfigure(1, weight=1)
