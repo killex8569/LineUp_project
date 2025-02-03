@@ -74,6 +74,22 @@ def download():
         
 def new_credentials():
     print("Bienvenue dans le gestionnaire de changement de mot de passe ! ")
+    
+
+def login():
+    login = "admin"
+    password = "123456"
+    
+    entry_login = login_entry.get()
+    entry_passwd = passwd_entry.get()
+    if entry_login == login and entry_passwd == password:
+        login_frame.grid_forget()
+        content_frame.grid(row=0, column=0, sticky="nswe")
+        content_frame2.grid(row=1, column=0, sticky="nswe")
+        navbar_frame.grid(row=0, column=1, rowspan=5, columnspan=5, sticky="nswe", padx=0, pady=0)
+    else:
+        print("invalid credentials")
+
 
 # Add interface
 lineup = CTk()
@@ -177,7 +193,27 @@ playlist_frame.grid(row=0, column=1, rowspan=5, columnspan=5, sticky="nswe", pad
 setting_lineup.grid_forget()
 account_frame.grid_forget()
 playlist_frame.grid_forget()
+download_frame.grid_forget()
+navbar_frame.grid_forget()
+content_frame.grid_forget()
+content_frame2.grid_forget()
 
+
+# login frame
+
+login_frame = customtkinter.CTkFrame(master=lineup)
+login_frame.grid(row=1, column=3, sticky="nswe", padx=10, pady=10)
+
+# Login Button
+
+login_entry = customtkinter.CTkEntry(master=login_frame, placeholder_text="votre login")
+login_entry.grid(row=0, column=0, padx=10, pady=10)
+
+passwd_entry = customtkinter.CTkEntry(master=login_frame, placeholder_text="votre mot de passe", show="*")
+passwd_entry.grid(row=1, column=0, padx=10, pady=10)
+
+login_btn = customtkinter.CTkButton(master=login_frame, text="connexion", command=login)
+login_btn.grid(row=2, column=0, padx=10, pady=10)
 
 # Lancement de la boucle
 lineup.mainloop()
