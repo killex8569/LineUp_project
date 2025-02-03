@@ -22,7 +22,10 @@ customtkinter.deactivate_automatic_dpi_awareness()
 def youtube_recherche():
     url_ytb = navbar_entry_youtube.get()
     print("votre recherche est : ", url_ytb)
-    
+
+def setting():
+    print("Bienvenue dans les settings")
+
 
 # Add interface
 lineup = CTk()
@@ -73,7 +76,7 @@ btn_playlist = customtkinter.CTkButton(master=content_frame2, text="Playlist", w
 btn_playlist.grid(row=3, column=1, pady=25, padx=40)
 btn_account = customtkinter.CTkButton(master=content_frame2, text="Compte", width=150, height=50, text_color="white", font=lineup_font, fg_color="transparent", image=account_png)
 btn_account.grid(row=5, column=1, pady=25, padx=40)
-btn_setting = customtkinter.CTkButton(master=content_frame2, text="Setting", width=150, height=50, text_color="white", font=lineup_font, fg_color="transparent", image=setting_png)
+btn_setting = customtkinter.CTkButton(master=content_frame2, text="Setting", width=150, height=50, text_color="white", font=lineup_font, fg_color="transparent", image=setting_png, command=setting)
 btn_setting.grid(row=4, column=1, pady=25, padx=40)
 
 
@@ -89,7 +92,8 @@ navbar_entry_youtube.grid(row=1, column=1, padx=5)
 navbar_btn = customtkinter.CTkButton(master=navbar, text="recherche", command=youtube_recherche)
 navbar_btn.grid(row= 1, column=2, padx=5, pady=5)
 
-
+setting_lineup = customtkinter.CTkFrame(master=lineup)
+setting_lineup.grid()
 
 # button navbar frame
 
