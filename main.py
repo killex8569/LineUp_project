@@ -42,7 +42,7 @@ def account():
 def youtube():
     print("Bienvenue dans youtube")
     # masquer les frames
-    navbar_frame.grid_forget()
+    account_frame.grid_forget()
     setting_lineup.grid_forget()
 
     # afficher les frames
