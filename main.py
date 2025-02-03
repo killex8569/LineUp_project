@@ -16,6 +16,13 @@ customtkinter.set_default_color_theme("blue")
 # deactivate automatic scaling
 customtkinter.deactivate_automatic_dpi_awareness()
 
+# Fonction pour rechercher
+def youtube_recherche():
+    recherche = navbar_entry_youtube.get()
+    print("votre recherche est : ", recherche)
+    
+
+
 # ajout de l'interface
 lineup = CTk()
 lineup.geometry("700x600")
@@ -78,7 +85,7 @@ navbar.grid(row=0, column=1, rowspan=5, columnspan=5, sticky="nswe", padx=0, pad
 navbar_entry_youtube = customtkinter.CTkEntry(master=navbar, placeholder_text="Recherche sur Youtube")
 navbar_entry_youtube.grid(row=1, column=1, padx=5)
 
-navbar_btn = customtkinter.CTkButton(master=navbar, text="recherche")
+navbar_btn = customtkinter.CTkButton(master=navbar, text="recherche", command=youtube_recherche)
 navbar_btn.grid(row= 1, column=2, padx=5, pady=5)
 
 
