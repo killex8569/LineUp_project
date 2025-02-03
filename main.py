@@ -104,7 +104,7 @@ lineup_font = customtkinter.CTkFont(family="Kanit", size=16)
 lineup.option_add("*font", lineup_font)
 
 # Create frame (logo)
-content_frame = customtkinter.CTkFrame(master=lineup, fg_color="#1E90FF", corner_radius=0)
+content_frame = customtkinter.CTkFrame(master=lineup, fg_color="#4A90E2", corner_radius=0)
 content_frame.grid(row=0, column=0, sticky="nswe")
 content_frame.grid_columnconfigure(1, weight=1)
 content_frame.grid_rowconfigure(0, weight=1)
@@ -117,7 +117,7 @@ logo = customtkinter.CTkLabel(master=content_frame, image=logo_png, text="", pad
 logo.grid(row=0, column=0)
 
 # Create frame 2 (action)
-content_frame2 = customtkinter.CTkFrame(master=lineup, fg_color="#1E90FF", corner_radius=0)
+content_frame2 = customtkinter.CTkFrame(master=lineup, fg_color="#4A90E2", corner_radius=0)
 content_frame2.grid(row=1, column=0, sticky="nswe")
 content_frame2.grid_columnconfigure(1, weight=1)
 content_frame2.grid_rowconfigure(1, weight=1)
