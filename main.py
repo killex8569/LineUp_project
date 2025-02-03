@@ -112,9 +112,11 @@ navbar_btn.grid(row= 1, column=2, padx=5, pady=5)
 
 # setting frame
 setting_lineup = customtkinter.CTkFrame(master=lineup)
+setting_lineup.grid(row=0, column=1, rowspan=5, columnspan=5, sticky="nswe", padx=0, pady=0)
 
 # account frame
 account_frame = customtkinter.CTkFrame(master=lineup)
+account_frame.grid(row=0, column=1, rowspan=5, columnspan=5, sticky="nswe", padx=0, pady=0)
 
 # Initialisation : Masquer les frames autres que la navbar au départ
 setting_lineup.grid_forget()
