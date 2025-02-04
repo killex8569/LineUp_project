@@ -2,8 +2,8 @@ import customtkinter as ctk
 import PIL
 from PIL import Image
 
-from frames.layout.LayoutLogo import LayoutLogo
-from frames.layout.LayoutMenu import LayoutMenu
+from frames.layout.Layout import Layout
+from frames.youtube import youtube
 
 
 class Lineup(ctk.CTk):
@@ -16,15 +16,25 @@ class Lineup(ctk.CTk):
         self.grid_rowconfigure(0, weight=1)  # configure grid system
         self.grid_columnconfigure(0, weight=1)
         
-        self.layoutMain = ctk.CTkFrame(master=self)
-        self.layoutMain.grid(row=0, column=0, padx=20, pady=20, sticky="nsew")
+        self.layoutmain = LayoutMain(master=self)
+        self.layoutmain.grid()
+    
+
+class LayoutMain(ctk.CTkFrame):
+    def __init__(self, master, **kwargs):
+        super().__init__(master, **kwargs)
+        self.frame = ctk.CTkFrame(master=self)
+        self.frame.grid(row=0, column=0, padx=20, pady=20, sticky="nsew")
         
-        self.contentFrame = LayoutLogo(master=self.layoutMain)
+        self.contentFrame = Layout(master=self)
         self.contentFrame.grid(row=0, column=0, padx=20, pady=20, sticky="nsew")
         
-        self.frame = LayoutMenu(master=self.layoutMain)
-        self.frame.grid(row=1, column=0, padx=20, pady=20, sticky="nsew")
-
+    
+    
+    def change_frame(self, newFrame):
+        self.current_frame = newFrame
+            
+        
 
 lineup = Lineup()
 lineup.mainloop()
