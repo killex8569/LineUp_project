@@ -9,6 +9,13 @@ from tkinter import font
 import tkinter.font as tkFont
 from pytube import *
 
+# import fichier
+import frames.account
+import frames.download
+import frames.playlist
+import frames.setting
+import frames.login
+
 # set the default appearance and font
 customtkinter.set_appearance_mode("dark")
 customtkinter.set_default_color_theme("blue")
@@ -198,7 +205,7 @@ playlist_frame_2.grid(row=0, column=1, rowspan=5, columnspan=5, sticky="nswe", p
 
 # button playlist frame
 new_playlist = customtkinter.CTkButton(master=playlist_frame)
-
+new_playlist.grid(row=0, column=1, rowspan=5, columnspan=5, sticky="nswe", padx=0, pady=0)
 
 # login frame
 login_frame = customtkinter.CTkFrame(master=lineup)
