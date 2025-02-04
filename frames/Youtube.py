@@ -2,6 +2,7 @@ import customtkinter
 from customtkinter import CTk
 from PIL import Image
 
+
 class Youtube(customtkinter.CTkFrame):
     def __init__(self, master, **kwargs):
         super().__init__(master, **kwargs)
