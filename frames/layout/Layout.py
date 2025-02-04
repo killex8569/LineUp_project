@@ -6,8 +6,6 @@ from frames.Playlist import Playlist
 from frames.Setting import Setting
 from frames.Account import Account
 
-
-
 class Layout(customtkinter.CTkFrame):
     def __init__(self, master, **kwargs):
         super().__init__(master, **kwargs)
