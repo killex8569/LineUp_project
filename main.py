@@ -193,8 +193,11 @@ account_btn_modify_credential.grid(row=7, column=3, sticky="nswe", padx=8, pady=
 playlist_frame = customtkinter.CTkLabel(master=lineup, text="")
 playlist_frame.grid(row=0, column=1, rowspan=5, columnspan=5, sticky="nswe", padx=0, pady=0)
 
-# button playlist frame
+playlist_frame_2 = customtkinter.CTkScrollableFrame(master=playlist_frame, fg_color="White")
+playlist_frame_2.grid(row=0, column=1, rowspan=5, columnspan=5, sticky="nswe", padx=0, pady=0)
 
+# button playlist frame
+new_playlist = customtkinter.CTkButton(master=playlist_frame)
 
 
 # login frame
@@ -220,6 +223,7 @@ download_frame.grid_forget()
 navbar_frame.grid_forget()
 content_frame.grid_forget()
 content_frame2.grid_forget()
+
 
 # Lancement de la boucle
 lineup.mainloop()
