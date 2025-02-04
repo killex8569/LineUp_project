@@ -3,8 +3,11 @@ import PIL
 from PIL import Image
 
 from frames.layout.Layout import Layout
-from frames.youtube import youtube
+from frames.Youtube import Youtube
 
+
+ctk.set_appearance_mode("dark")
+ctk.set_default_color_theme("dark-blue")
 
 class Lineup(ctk.CTk):
     def __init__(self):
@@ -17,7 +20,7 @@ class Lineup(ctk.CTk):
         self.grid_columnconfigure(0, weight=1)
         
         self.layoutmain = Layout(master=self)
-        self.layoutmain.grid()
+        self.layoutmain.grid(row=0, column=0, sticky="nsw")
         
 
 lineup = Lineup()

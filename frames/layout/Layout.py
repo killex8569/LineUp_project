@@ -11,8 +11,8 @@ class Layout(customtkinter.CTkFrame):
         # frame 2
         self.frame = customtkinter.CTkFrame(master=self, fg_color="#4A90E2", corner_radius=0)
         self.frame.grid(row=1, column=0, sticky="nswe")
-        self.frame.grid_columnconfigure(1, weight=1)
-        self.frame.grid_rowconfigure(1, weight=1)
+        self.frame.grid_columnconfigure(0, weight=1)
+        self.frame.grid_rowconfigure(0, weight=1)
         
         self.setting_png = customtkinter.CTkImage(Image.open("data/setting.png"), size=(20, 20))
         self.account_png = customtkinter.CTkImage(Image.open("data/account.png"), size=(20, 20))
