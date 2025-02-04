@@ -4,15 +4,17 @@ from PIL import Image
 class Layout(customtkinter.CTkFrame):
     def __init__(self, master, **kwargs):
         super().__init__(master, **kwargs)
-        # Frame 1
-        self.logo_png = customtkinter.CTkImage(Image.open("data/LineUp.png"), size=(100, 100))
-        self.logo = customtkinter.CTkLabel(master=self, image=self.logo_png, text="", fg_color="#4A90E2")
-        self.logo.grid(row=0, column=0)
+
         # frame 2
         self.frame = customtkinter.CTkFrame(master=self, fg_color="#4A90E2", corner_radius=0)
         self.frame.grid(row=1, column=0, sticky="nswe")
         self.frame.grid_columnconfigure(0, weight=1)
         self.frame.grid_rowconfigure(0, weight=1)
+        
+        # Frame 1
+        self.logo_png = customtkinter.CTkImage(Image.open("data/LineUp.png"), size=(100, 100))
+        self.logo = customtkinter.CTkLabel(master=self.frame, image=self.logo_png, text="", fg_color="#4A90E2")
+        self.logo.grid(row=0, column=1)
         
         self.setting_png = customtkinter.CTkImage(Image.open("data/setting.png"), size=(20, 20))
         self.account_png = customtkinter.CTkImage(Image.open("data/account.png"), size=(20, 20))
