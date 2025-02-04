@@ -8,14 +8,6 @@ from PyInstaller import *
 from tkinter import font
 import tkinter.font as tkFont
 from pytube import *
-
-# import fichier
-import frames.account
-import frames.download
-import frames.playlist
-import frames.setting
-import frames.login
-
 # set the default appearance and font
 customtkinter.set_appearance_mode("dark")
 customtkinter.set_default_color_theme("blue")
