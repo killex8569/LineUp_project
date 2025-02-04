@@ -1,5 +1,9 @@
 import customtkinter
 from PIL import Image
+from frames.Youtube import Youtube
+from frames.Download import Download
+from frames.Playlist import Playlist
+from frames.Setting import Setting
 from frames.Account import Account
 
 
@@ -25,16 +29,28 @@ class Layout(customtkinter.CTkFrame):
         self.download_png = customtkinter.CTkImage(Image.open("data/download-circular-button.png"), size=(20, 20))
         self.youtube_png = customtkinter.CTkImage(Image.open("data/youtube.png"), size=(20, 20))
         
-        self.btn_youtube = customtkinter.CTkButton(master=self.frame, text="Youtube", width=150, height=50, text_color="white", fg_color="transparent", image=self.youtube_png)
+        self.btn_youtube = customtkinter.CTkButton(master=self.frame, text="Youtube", width=150, height=50, text_color="white", fg_color="transparent", image=self.youtube_png, command=self.getYoutubePage)
         self.btn_youtube.grid(row=1, column=1, pady=25, padx=40)
-        self.btn_url_download = customtkinter.CTkButton(master=self.frame, text="Download", width=150, height=50, text_color="white", fg_color="transparent", image=self.download_png)
+        self.btn_url_download = customtkinter.CTkButton(master=self.frame, text="Download", width=150, height=50, text_color="white", fg_color="transparent", image=self.download_png, command=self.getDownloadPage)
         self.btn_url_download.grid(row=2, column=1, pady=25, padx=40)
-        self.btn_playlist = customtkinter.CTkButton(master=self.frame, text="Playlist", width=150, height=50, text_color="white", fg_color="transparent", image=self.playlist_png)
+        self.btn_playlist = customtkinter.CTkButton(master=self.frame, text="Playlist", width=150, height=50, text_color="white", fg_color="transparent", image=self.playlist_png, command=self.getPlaylistPage)
         self.btn_playlist.grid(row=3, column=1, pady=25, padx=40)
+        self.btn_setting = customtkinter.CTkButton(master=self.frame, text="Setting", width=150, height=50, text_color="white", fg_color="transparent", image=self.setting_png, command=self.getSettingPage)
+        self.btn_setting.grid(row=4, column=1, pady=25, padx=40)
         self.btn_account = customtkinter.CTkButton(master=self.frame, text="Account", width=150, height=50, text_color="white", fg_color="transparent", image=self.account_png, command=self.getAccountPage)
         self.btn_account.grid(row=5, column=1, pady=25, padx=40)
-        self.btn_setting = customtkinter.CTkButton(master=self.frame, text="Setting", width=150, height=50, text_color="white", fg_color="transparent", image=self.setting_png)
-        self.btn_setting.grid(row=4, column=1, pady=25, padx=40)
+    
+    def getYoutubePage(self):
+        self.master.change_frame(Youtube(master=self))
+
+    def getPlaylistPage(self):
+        self.master.change_frame(Playlist(master=self))
+    
+    def getDownloadPage(self):
+        self.master.change_frame(Download(master=self))
+
+    def getSettingPage(self):
+        self.master.change_frame(Setting(master=self))
     
     def getAccountPage(self):
         self.master.change_frame(Account(master=self))

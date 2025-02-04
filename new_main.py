@@ -14,7 +14,7 @@ class Lineup(ctk.CTk):
         super().__init__()
         self.geometry("700x600")
         self.title("LineUp")
-        self.iconbitmap("data\\LineUp.ico")
+        #self.iconbitmap("data\\LineUp.ico")
         self.resizable(False, False)
         self.grid_rowconfigure(0, weight=1)  # configure grid system
         self.grid_columnconfigure(0, weight=1)
@@ -28,6 +28,7 @@ class Lineup(ctk.CTk):
     def change_frame(self, newFrame):
         self.current_frame.grid_forget()
         self.current_frame = newFrame
+        self.current_frame.grid(row=1, column=1, sticky="nswe", padx=0, pady=0)
 
 
 lineup = Lineup()
