@@ -4,6 +4,8 @@ from PIL import Image
 
 from frames.layout.Layout import Layout
 from frames.Youtube import Youtube
+from frames.Account import Account
+
 
 
 ctk.set_appearance_mode("dark")
@@ -22,6 +24,13 @@ class Lineup(ctk.CTk):
         self.layoutmain = Layout(master=self)
         self.layoutmain.grid(row=0, column=0, sticky="nsw")
         
+        self.current_frame = Youtube(master=self)
+        self.current_frame.grid(row=0, column=0)
+        
+    def change_frame(self, new_frame):
+        self.current_frame = new_frame
+
+
 
 lineup = Lineup()
 lineup.mainloop()
