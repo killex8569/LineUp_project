@@ -6,6 +6,8 @@ from frames.Playlist import Playlist
 from frames.Setting import Setting
 from frames.Account import Account
 
+from db.daos.DAOPlaylist import DAOPlaylist
+
 class Layout(customtkinter.CTkFrame):
     def __init__(self, master, **kwargs):
         super().__init__(master, **kwargs)
@@ -42,7 +44,9 @@ class Layout(customtkinter.CTkFrame):
         self.master.change_frame(Youtube(master=self))
 
     def getPlaylistPage(self):
-        self.master.change_frame(Playlist(master=self))
+        dao = DAOPlaylist('db/database.json')
+        DBplaylists = dao.getAll()
+        self.master.change_frame(Playlist(master=self, playlists=DBplaylists))
     
     def getDownloadPage(self):
         self.master.change_frame(Download(master=self))

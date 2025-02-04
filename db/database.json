@@ -6,5 +6,20 @@
             "passhash": null
         }
     ],
-    "playlists": []
+    "playlists": [
+        {
+            "id": 0,
+            "libelle": "test",
+            "urlList": [
+                "ddd"
+            ]
+        },
+        {
+            "id": 1,
+            "libelle": "test 2",
+            "urlList": [
+                "ddd"
+            ]
+        }
+    ]
 }
