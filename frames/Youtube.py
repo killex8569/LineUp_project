@@ -2,7 +2,7 @@ import customtkinter
 from customtkinter import CTk
 from PIL import Image
 
-class youtube(customtkinter.CTkFrame):
+class Youtube(customtkinter.CTkFrame):
     def __init__(self, master, **kwargs):
         super().__init__(master, **kwargs)
         self.youtube_frame = customtkinter.CTkFrame(master=self, fg_color="#4A90E2", corner_radius=0)
