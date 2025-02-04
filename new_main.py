@@ -18,12 +18,16 @@ class Lineup(ctk.CTk):
         self.resizable(False, False)
         self.grid_rowconfigure(0, weight=1)  # configure grid system
         self.grid_columnconfigure(0, weight=1)
-        
+
         self.layoutmain = Layout(master=self)
         self.layoutmain.grid(row=0, column=0, sticky="nswe")
-        
-        self.startup_frame = Youtube(master=self.layoutmain, corner_radius=10)
-        self.startup_frame.grid(row=1, column=1, sticky="nswe", padx=0, pady=0)
+
+        self.current_frame = Youtube(master=self.layoutmain, corner_radius=10)
+        self.current_frame.grid(row=1, column=1, sticky="nswe", padx=0, pady=0)
+
+    def change_frame(self, newFrame):
+        self.current_frame.grid_forget()
+        self.current_frame = newFrame
 
 
 lineup = Lineup()

@@ -1,5 +1,6 @@
 import customtkinter
 from PIL import Image
+from frames.Account import Account
 
 class Layout(customtkinter.CTkFrame):
     def __init__(self, master, **kwargs):
@@ -28,7 +29,10 @@ class Layout(customtkinter.CTkFrame):
         self.btn_url_download.grid(row=2, column=1, pady=25, padx=40)
         self.btn_playlist = customtkinter.CTkButton(master=self.frame, text="Playlist", width=150, height=50, text_color="white", fg_color="transparent", image=self.playlist_png)
         self.btn_playlist.grid(row=3, column=1, pady=25, padx=40)
-        self.btn_account = customtkinter.CTkButton(master=self.frame, text="Account", width=150, height=50, text_color="white", fg_color="transparent", image=self.account_png)
+        self.btn_account = customtkinter.CTkButton(master=self.frame, text="Account", width=150, height=50, text_color="white", fg_color="transparent", image=self.account_png, command=self.getAccountPage)
         self.btn_account.grid(row=5, column=1, pady=25, padx=40)
         self.btn_setting = customtkinter.CTkButton(master=self.frame, text="Setting", width=150, height=50, text_color="white", fg_color="transparent", image=self.setting_png)
         self.btn_setting.grid(row=4, column=1, pady=25, padx=40)
+    
+    def getAccountPage(self):
+        self.master.change_frame(Account(master=self))
