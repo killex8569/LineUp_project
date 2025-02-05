@@ -15,5 +15,11 @@ class Account(customtkinter.CTkFrame):
         
         self.account_btn_change_passwd = customtkinter.CTkButton(master=self, corner_radius=5, text="sauvegarder")
         self.account_btn_change_passwd.grid(row=1, column=4, sticky="nswe", padx=5, pady=5)
+        
+        self.change_account_label = customtkinter.CTkLabel(master=self, text="login")
+        self.change_account_label.grid(row=3, column=2, sticky="nswe", padx=5, pady=5)
+        
+        self.account_change_user_btn = customtkinter.CTkButton(master=self, text="Deconnexion")
+        self.account_change_user_btn.grid(row=4, column=2, sticky="nswe", padx=5, pady=5)
 
 

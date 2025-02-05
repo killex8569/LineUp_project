@@ -7,7 +7,7 @@ class Setting(customtkinter.CTkFrame):
         self.label_theme = customtkinter.CTkLabel(master=self, text="theme setting")
         self.label_theme.grid()
         
-# theme color
+# paramètres
         self.theme_options = ["Dark", "Light", "System"]
 
         # Création du menu déroulant
