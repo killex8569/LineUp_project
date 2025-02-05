@@ -6,6 +6,7 @@ from frames.Playlist import Playlist
 from frames.Setting import Setting
 from frames.Account import Account
 from frames.Login import Login
+from frames.info_dev import Info_Dev
 
 from db.daos.DAOPlaylist import DAOPlaylist
 
@@ -31,15 +32,17 @@ class Layout(customtkinter.CTkFrame):
         self.youtube_png = customtkinter.CTkImage(Image.open("data/youtube.png"), size=(20, 20))
         
         self.btn_youtube = customtkinter.CTkButton(master=self.frame, text="Youtube", width=150, height=50, text_color="white", fg_color="transparent", image=self.youtube_png, command=self.getYoutubePage)
-        self.btn_youtube.grid(row=1, column=1, pady=25, padx=40)
+        self.btn_youtube.grid(row=1, column=1, pady=20, padx=30)
         self.btn_url_download = customtkinter.CTkButton(master=self.frame, text="Download", width=150, height=50, text_color="white", fg_color="transparent", image=self.download_png, command=self.getDownloadPage)
-        self.btn_url_download.grid(row=2, column=1, pady=25, padx=40)
+        self.btn_url_download.grid(row=2, column=1, pady=20, padx=30)
         self.btn_playlist = customtkinter.CTkButton(master=self.frame, text="Playlist", width=150, height=50, text_color="white", fg_color="transparent", image=self.playlist_png, command=self.getPlaylistPage)
-        self.btn_playlist.grid(row=3, column=1, pady=25, padx=40)
+        self.btn_playlist.grid(row=3, column=1, pady=20, padx=30)
         self.btn_setting = customtkinter.CTkButton(master=self.frame, text="Setting", width=150, height=50, text_color="white", fg_color="transparent", image=self.setting_png, command=self.getSettingPage)
-        self.btn_setting.grid(row=4, column=1, pady=25, padx=40)
+        self.btn_setting.grid(row=4, column=1, pady=20, padx=30)
         self.btn_account = customtkinter.CTkButton(master=self.frame, text="Account", width=150, height=50, text_color="white", fg_color="transparent", image=self.account_png, command=self.getAccountPage)
-        self.btn_account.grid(row=5, column=1, pady=25, padx=40)
+        self.btn_account.grid(row=5, column=1, pady=5, padx=0)
+        self.account_btn_info_dev = customtkinter.CTkButton(master=self.frame, text="Releases", width=150, height=50, text_color="white", fg_color="transparent", command=self.getInfoDevPage)
+        self.account_btn_info_dev.grid(row=6, column=1, sticky="nswe", pady=20, padx=30)
     
     def getYoutubePage(self):
         self.master.change_frame(Youtube(master=self))
@@ -60,3 +63,9 @@ class Layout(customtkinter.CTkFrame):
         
     def getloginPage(self):
         self.master.change_frame(Login(master=self))
+    
+    def getInfoDevPage(self):
+        self.master.change_frame(Info_Dev(master=self))
+    
+
+    
