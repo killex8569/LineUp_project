@@ -5,6 +5,7 @@ from frames.Download import Download
 from frames.Playlist import Playlist
 from frames.Setting import Setting
 from frames.Account import Account
+from frames.Login import Login
 
 from db.daos.DAOPlaylist import DAOPlaylist
 
@@ -56,3 +57,6 @@ class Layout(customtkinter.CTkFrame):
     
     def getAccountPage(self):
         self.master.change_frame(Account(master=self))
+        
+    def getloginPage(self):
+        self.master.change_frame(Login(master=self))
