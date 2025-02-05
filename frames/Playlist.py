@@ -10,7 +10,7 @@ class Playlist(ctk.CTkFrame):
         
         # frame playlist
         self.your_playlist = ctk.CTkScrollableFrame(master)
-        self.your_playlist.grid(row=2, column=1, sticky="nsew")
+        self.your_playlist.grid(row=2, column=2, sticky="nsew")
         
         self.create_playlist_btn = ctk.CTkButton(master)
         self.create_playlist_btn.grid(row=3, column=2, sticky="nsew")

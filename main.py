@@ -30,6 +30,5 @@ class Lineup(ctk.CTk):
         self.current_frame = newFrame
         self.current_frame.grid(row=1, column=1, sticky="nswe", padx=0, pady=0)
 
-
 lineup = Lineup()
 lineup.mainloop()
