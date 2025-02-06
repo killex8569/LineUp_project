@@ -8,7 +8,7 @@ class Info_Dev(customtkinter.CTkFrame):
         self.label.grid(row=1, column=1, sticky="nswe", padx=10, pady=10)
 
         self.textBox = customtkinter.CTkTextbox(master=self)
-        self.textBox.grid(row=2, column=1, sticky="nswe", padx=10, pady=10)
+        self.textBox.grid(row=2, column=1, columnspan=5, sticky="nswe", padx=10, pady=10)
 
-        self.textBox.insert("0.0", "Nouveauté : \n\n- Utilisation de la POO\n- Ajout de pages (Account etc... settings)\n- test")
+        self.textBox.insert("0.0", "Nouveauté : \n\n1 - Utilisation de la POO comme base\n2 - Ajout de pages (Account etc... settings)")
         
